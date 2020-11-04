@@ -277,17 +277,19 @@ class LaraBlockIo
      *
      * @return object Contains withdraw details
      */
-    public function withdraw($amounts, $toAddresses, $nonce = null)
+    public function withdraw($amounts, $toAddresses, $priority = "low", $fee = null, $nonce = null)
     {
         $array = [
-            'amounts'      => $amounts,
+            'amounts' => $amounts,
             'to_addresses' => $toAddresses,
-            'nonce'        => $nonce,
+            'priority'  => $priority,
+            'custom_network_fee' => $fee,
+            'nonce' => $nonce
         ];
 
         return $this->blockIo->withdraw(
                     $this->setAmountsPrecision($array)
-                );
+               );
     }
 
     /**
