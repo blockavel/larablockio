@@ -16,8 +16,6 @@ Create an account at [Block.io](https://block.io/users/sign_up) and take note of
 
 The BlockIo library requires the 'mcrypt' (please note that mcrypt has been deprecated for php7.1), 'gmp', and 'cURL' extensions for PHP as well as the 'bcmath' library. To enable these, please see:
 
--[mCrypt Installation Guide](http://php.net/manual/en/mcrypt.installation.php)
-
 -[GMP Installation Guide](http://php.net/manual/en/gmp.installation.php)
 
 -[cURL Installation Guide](http://php.net/manual/en/curl.installation.php)
@@ -181,7 +179,7 @@ LaraBlockIo::getUserAddress($userId);
 ### Withdraw
 ```php
 // Withdraws amount of coins from any addresses in your account.
-LaraBlockIo::withdraw($amounts, $toAddresses, $nonce = null);
+LaraBlockIo::withdraw($amounts, $toAddresses, $priority, $fee, $nonce = null);
 // Withdraws amount of coins from specific addresses in your account.
 LaraBlockIo::withdrawFromAddressesToAddresses($amounts, $fromAddresses, $toAddresses, $nonce = null);
 LaraBlockIo::withdrawFromLabelsToLabels($amounts, $fromLabels, $toLabels, $nonce = null);
